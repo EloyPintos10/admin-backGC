@@ -5,6 +5,7 @@ import cors from "cors";
 import path from "path";
 import "./database"
 import productosRouter from "./routes/productos.routes"
+import authRouter from "./routes/usuario.routes"
 dotenv.config();
 
 
@@ -29,6 +30,6 @@ app.use(express.static(path.join(__dirname, "../public")));
 //rutas
 
 app.use("/apiadmin", productosRouter);
-//app.use("/apiragnar", pedidosRouter);
-//app.use("/apiragnar/auth", authRouter);
+app.use("/apiadmin/auth", authRouter);
+
 
