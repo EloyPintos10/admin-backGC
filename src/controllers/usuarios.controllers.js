@@ -66,16 +66,12 @@ export const crearUsuario = async (req, res) => {
         mensaje: "ya existe un usuario con el correo enviado",
       });
     }
-
     usuario = new Usuario(req.body);
-
     const salt = bcrypt.genSaltSync();
     usuario.password = bcrypt.hashSync(password, salt);
 
-    await usuario.save();
-   
+    await usuario.save();   
     const token = await generarJWT(usuario._id, usuario.nombre);
-
     res.status(201).json({
       mensaje: "usuario creado",
       uid: usuario._id,

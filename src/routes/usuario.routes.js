@@ -26,11 +26,8 @@ router
   .get(listarUsuarios)
   .post(
     [
-      check("nombre", "El nombre es obligatorio").not().isEmpty(),
-      check("apellido", "El apellido es obligatorio").not().isEmpty(),
-      check("userName", "El nombre de usuario es obligatorio").not().isEmpty(),
-      check("email", "El email es obligatorio").isEmail(),
-      check("perfil", "El perfil es obligatorio"),
+      check("nombre", "El nombre es obligatorio").not().isEmpty(),     
+      check("email", "El email es obligatorio").isEmail(),     
       check("password", "El password debe de ser de 8 caracteres").isLength({
         min: 8,
       }),
