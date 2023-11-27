@@ -118,7 +118,7 @@ export const obtenerUsuarios = async (req, res) => {
 export const borrarUsuarios = async (req, res) => {
   try {
     const id = req.params._id;
-    console.log(id)
+    
     Usuario.findByIdAndDelete(id, (err, usuario) => {
       if (err || usuario === null) {
         console.log(err);
