@@ -23,8 +23,7 @@ const usuarioSchema = new Schema({
         required:true
     },
     perfil:{
-        type: String,
-       
+        type: String,       
     },
     password:{
         type: String,

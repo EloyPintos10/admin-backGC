@@ -41,7 +41,7 @@ router
         .isLength({ min: 10, max: 300 })
         .withMessage("La descripción debe tener entre 10 y 300 caracteres"),
       check("category")
-        .isIn(["Celular"])
+        .isIn(["Bebidas"])
         .withMessage("La categoria debe ser valida"),
       check("quantity")
         .isNumeric()

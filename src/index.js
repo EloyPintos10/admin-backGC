@@ -6,6 +6,8 @@ import path from "path";
 import "./database"
 import productosRouter from "./routes/productos.routes"
 import authRouter from "./routes/usuario.routes"
+import pedidosRouter from "./routes/pedidos.routes"
+
 dotenv.config();
 
 
@@ -30,6 +32,7 @@ app.use(express.static(path.join(__dirname, "../public")));
 //rutas
 
 app.use("/apiadmin", productosRouter);
+app.use("/apiadmin", pedidosRouter);
 app.use("/apiadmin/auth", authRouter);
 
 

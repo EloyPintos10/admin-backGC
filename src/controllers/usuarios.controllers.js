@@ -106,7 +106,7 @@ export const listarUsuarios = async (req, res) => {
 
 export const obtenerUsuarios = async (req, res) => {
   try {
-    const id = req.params._id;
+    const id =( req.params.id);
     const usuarioBuscado = await Usuario.findById(id);
     console.log(usuarioBuscado);
     res.status(200).json(usuarioBuscado);
@@ -118,6 +118,7 @@ export const obtenerUsuarios = async (req, res) => {
 export const borrarUsuarios = async (req, res) => {
   try {
     const id = req.params._id;
+    console.log(id)
     Usuario.findByIdAndDelete(id, (err, usuario) => {
       if (err || usuario === null) {
         console.log(err);

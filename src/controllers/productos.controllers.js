@@ -60,7 +60,8 @@ export const editarProducto = async (req, res) => {
 };
 export const borrarProducto = async (req, res) => {
   try {
-    Producto.findByIdAndDelete(req.params.id)
+    const id =(req.params._id)
+    Producto.findByIdAndRemove(id)
      return(
        res.status(200).json({
          mensaje: "El producto fue eliminado correctamente",
